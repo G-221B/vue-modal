@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <h2>app</h2>
   </div>
 </template>
-
+<script>
+export default {
+  name: 'App',
+  mounted () {
+    // this.modal('标题', '默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。', '', true)
+    //   .then((e) => {
+    //     console.log(e)
+    //     if (e.type === 'concel') {
+    //       console.log('取消了')
+    //     } else {
+    //       console.log('确定了')
+    //     }
+    //   })
+    this.modal('温馨提示',
+      '是否确定退出？',
+      { textAlign: 'center', color: 'red' },
+      true,
+      () => {
+        console.log('确定了')
+      }, () => {
+        console.log('取消了')
+      })
+  }
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
